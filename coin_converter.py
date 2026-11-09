@@ -9,27 +9,47 @@ CENTS_PER_DIME = 10    # a dime is 10 cents
 CENTS_PER_NICKEL = 5   # a nickel is 5 cents
 
 # The original program calculated the value of some coins.
+yesNo = True
+numberTotal = 0
+# get input\
+while (yesNo == True):
+      
+      print('We will convert coins to cents.')
+      quarters = int(input('How many quarters? '))
+      dimes = int(input('How many dimes? '))
+      nickels = int(input('How many nickels? '))
+      pennies = int(input('How many pennies? '))
 
-# get input
-print('We will convert coins to cents.')
-quarters = int(input('How many quarters? '))
-dimes = int(input('How many dimes? '))
-nickels = int(input('How many nickels? '))
-pennies = int(input('How many pennies? '))
+      # process the input,
+      # calculate the total value, in cents,
+      # of the coins input by the user.
+      cents = CENTS_PER_QUARTER * quarters \
+            + CENTS_PER_DIME * dimes \
+            + CENTS_PER_NICKEL * nickels \
+            + pennies
 
-# process the input,
-# calculate the total value, in cents,
-# of the coins input by the user.
-cents = CENTS_PER_QUARTER * quarters \
-      + CENTS_PER_DIME * dimes \
-      + CENTS_PER_NICKEL * nickels \
-      + pennies
-
-# display the original coin quantities
-# and the calculated value.
-print( quarters, 'quarters',
-       dimes, 'dimes',
-       nickels, 'nickels',
-       pennies, 'pennies',
-       'is', cents, 'cents.')
-
+      # display the original coin quantities
+      # and the calculated value.
+      print( quarters, 'quarters',
+            dimes, 'dimes',
+            nickels, 'nickels',
+            pennies, 'pennies',
+            'is', cents, 'cents.')
+      print("Do you want to convert more coins (y/n)")
+      answer = input()
+      if answer.strip().lower() == "y":
+            continue
+      else:
+            yesNo = False
+            #break also works
+print("enter numbers, one at a time. Enter a negative number to stop.")
+while True:
+      print("please enter a number: ")
+      numberEntered = int(input())
+      if numberEntered > 0:
+            numberTotal += numberEntered
+      else:
+            break
+print(numberTotal)
+      
+      
